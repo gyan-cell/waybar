@@ -1,0 +1,394 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 15px;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+
+@import "./colors/pywal.css";
+
+/* === Main Background === */
+
+window#waybar {
+  background: @background;
+}
+
+/* === Drop Shadow === */
+
+window#waybar > box {
+  background-color: @background;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 1);
+  margin: 2px;
+}
+
+/* === Tooltip === */
+
+/* tooltip { */
+/*   background: @main-bg; */
+/*   border: solid; */
+/*   border-width: 1.5px; */
+/*   border-radius: 8px; */
+/*   border-color: @main-br; */
+/* } */
+/* tooltip label { */
+/*   color: @main-fg; */
+/*   font-weight: normal; */
+/*   margin: -1.5px 3px; */
+/* } */
+
+/* === Workspace Buttons === */
+
+#workspaces button {
+  color: @foreground;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 0 2px;
+  transition: none;
+}
+#workspaces button:hover {
+  color: @foreground;
+  background: @background;
+  text-shadow: none;
+  box-shadow: none;
+}
+#workspaces button.active {
+  color: @background;
+  background: @color15;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+  margin: 2px;
+  padding: 0 6px;
+}
+
+/* === General === */
+
+#custom-ws,
+#workspaces,
+#window,
+#custom-cpuinfo,
+#memory,
+#custom-cpu,
+#clock,
+#custom-wifi,
+#bluetooth,
+#custom-update,
+#custom-media,
+#pulseaudio,
+#custom-backlight,
+#battery,
+#custom-power {
+  opacity: 1;
+  color: @color7;
+  margin-bottom: 0;
+  padding: 0 4px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+#custom-ws,
+#workspaces,
+#window,
+#custom-cpuinfo,
+#memory,
+#custom-cpu,
+#clock,
+#custom-wifi,
+#bluetooth,
+#custom-update,
+#custom-media,
+#pulseaudio,
+#custom-backlight,
+#battery,
+#custom-power:active {
+  color: @color7;
+  background: transparent;
+}
+
+#custom-left1,
+#custom-left2,
+#custom-left3,
+#custom-left4,
+#custom-left5,
+#custom-left6,
+#custom-left7,
+#custom-left8 {
+  font-size: 11pt;
+  text-shadow: -2px 0 2px rgba(0, 0, 0, 0.5);
+  color: transparent;
+  background: transparent;
+}
+
+#custom-right1,
+#custom-right2,
+#custom-right3,
+#custom-right4,
+#custom-right5 {
+  color: transparent;
+  font-size: 11pt;
+  padding-right: 3px;
+  background: transparent;
+  text-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* === Modules === */
+
+/* == Window Icon == */
+
+#custom-ws {
+  background: @background;
+  padding-left: 3px;
+  color: @color9;
+  text-shadow: 3px 0 2px rgba(0, 0, 0, 0.4);
+}
+
+/* == Workspaces == */
+
+#custom-left1 {
+  color: transparent;
+  background: transparent;
+  padding-left: 3px;
+}
+#workspaces {
+  background: @background;
+  padding-right: 0;
+}
+#custom-right1 {
+  color: transparent;
+  background: transparent;
+  text-shadow: 3px 0 2px rgba(0, 0, 0, 0.4);
+}
+
+/* == Temperature == */
+
+#custom-paddc {
+  padding-right: 22px;
+}
+#custom-left2 {
+  color: transparent;
+  background: transparent;
+  padding-left: 3px;
+}
+#custom-cpuinfo {
+  background: transparent;
+  padding-left: 1px;
+  padding-right: 0;
+}
+
+/* == Memory == */
+
+#custom-left3 {
+  color: @color7;
+  background: transparent;
+  padding-left: 3px;
+}
+#memory {
+  background: transparent;
+  padding-left: 1px;
+  padding-right: 0;
+}
+#memory.warning {
+  color: @color7;
+}
+#memory.critical {
+  color: @color3;
+}
+
+/* == CPU == */
+
+#custom-left4 {
+  color: transparent;
+  background: transparent;
+  padding-left: 3px;
+}
+#custom-cpu {
+  background: transparent;
+  padding-left: 1px;
+  padding-right: 0;
+}
+#custom-leftin1 {
+  color: transparent;
+  font-size: 12.2pt;
+}
+
+/* == Distro Icon == */
+
+#custom-left5 {
+  color: transparent;
+  background: transparent;
+  text-shadow: -2px 0 2px rgba(0, 0, 0, 0.6);
+  padding-left: 3px;
+}
+#idle_inhibitor {
+  color: @color6;
+  background: transparent;
+  font-size: 11pt;
+  margin-right: -1px;
+  margin-bottom: -2px;
+  padding-right: 0;
+  padding-left: 3px;
+  text-shadow: 0 0 1.5px rgba(0, 0, 0, 1);
+}
+#custom-right2 {
+  color: transparent;
+  background: transparent;
+}
+
+/* == Time == */
+
+#custom-rightin1 {
+  color: transparent;
+  font-size: 12.2pt;
+}
+#clock.time {
+  background: @time;
+}
+#custom-right3 {
+  color: transparent;
+  background: @date;
+}
+
+/* == Date == */
+
+#clock.date {
+  background: transparent;
+}
+#clock.date:hover {
+  color: @color7;
+  text-shadow: none;
+  box-shadow: none;
+}
+#custom-right4 {
+  color: transparent;
+  background: transparent;
+}
+
+/* == Tray == */
+
+#custom-wifi {
+  padding-left: 5px;
+  padding-right: 8px;
+  background: transparent;
+}
+#custom-wifi:hover {
+  color: transparent;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+#bluetooth {
+  padding-right: 5px;
+  background: transparent;
+}
+#bluetooth:hover {
+  color: @color7;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+#custom-update {
+  padding-right: 8px;
+  background: transparent;
+}
+#custom-update:hover {
+  color: @color7;
+  text-shadow: none;
+  box-shadow: none;
+}
+#custom-right5 {
+  color: transparent;
+  background: transparent;
+}
+
+/* == Media Info == */
+
+#custom-media {
+  font-weight: normal;
+  background-color: @background;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+#custom-media:hover {
+  color: @color7;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* == Output Device == */
+
+#custom-left6 {
+  color: transparent;
+  background: transparent;
+  padding-left: 3px;
+}
+#pulseaudio {
+  background: @pulseaudio;
+}
+#pulseaudio:hover {
+  color: @color4;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* == Brightness == */
+
+#custom-left7 {
+  color: transparent;
+  background: transparent;
+  padding-left: 2px;
+}
+#custom-backlight {
+  background: @background;
+}
+
+/* == Battery == */
+
+#custom-left8 {
+  color: transparent;
+  background: transparent;
+  padding-left: 2px;
+}
+#battery {
+  background: @battery;
+}
+#battery.full {
+  color: @full;
+}
+#battery.good {
+  color: @module-fg;
+}
+#battery.warning {
+  color: @warning;
+}
+#battery.critical {
+  color: @critical;
+}
+#battery.charging {
+  color: @charging;
+}
+
+/* == Power Button == */
+
+#custom-leftin2 {
+  color: transparent;
+  background: transparent;
+  font-size: 12.2pt;
+  margin-bottom: -2px;
+}
+#custom-power {
+  color: @color7;
+  background: @background;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 0 2px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin: 2px 4px 2px 0;
+  padding-right: 6px;
+  padding-left: 9px;
+}
+#custom-power:hover {
+  color: @color7;
+  background: @background;
+  text-shadow: none;
+  box-shadow: none;
+}
